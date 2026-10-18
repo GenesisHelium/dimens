@@ -4,7 +4,7 @@ Spinning 1 dimension to 10 dimensions cubes in your terminal.
 
 ## Install
 
-curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/YOURNAME/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens
+``curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/YOURNAME/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens``
 
 Needs bash 5+ and awk. Run it with dimens.
 
