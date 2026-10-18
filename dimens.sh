@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 
+[ "${BASH_VERSINFO:-0}" -ge 4 ] || { echo "dimens: needs bash 4 or newer" >&2; exit 1; }
+
 names=("" line square cube tesseract penteract hexeract hepteract octeract enneract dekeract)
 
-[[ -t 0 && -t 1 ]] || { echo "dimensions: run this in a terminal" >&2; exit 1; }
-command -v awk >/dev/null || { echo "dimensions: awk is missing" >&2; exit 1; }
+[[ -t 0 && -t 1 ]] || { echo "dimens: run this in a terminal" >&2; exit 1; }
+command -v awk >/dev/null || { echo "dimens: awk is missing" >&2; exit 1; }
 
 uni=0
 case "${LC_ALL:-${LC_CTYPE:-${LANG:-}}}" in
     *[Uu][Tt][Ff]-8* | *[Uu][Tt][Ff]8*) uni=1 ;;
 esac
-[[ $TERM == linux ]] && uni=0
+[[ $TERM == linux || -n ${DIMENS_ASCII:-} ]] && uni=0
 
 shopt -s checkwinsize
 read -r LINES COLUMNS < <(stty size 2>/dev/null)
-: "${LINES:=24}" "${COLUMNS:=80}"
+(( ${LINES:-0} > 0 && ${COLUMNS:-0} > 0 )) || { LINES=24; COLUMNS=80; }
 
 IFS= read -r -d '' prog <<'EOF'
 function abs(v) { return v < 0 ? -v : v }
@@ -139,13 +141,14 @@ menu() {
 }
 
 play() {
-    local d=$1 ph=0 sp=6 paused=0 key hud last= tick now prev=${EPOCHREALTIME/[.,]/}
+    local d=$1 ph=0 sp=6 paused=0 key hud last= tick now dt prev=${EPOCHREALTIME/[.,]/}
     printf '\033[2J\033[?25l'
     while :; do
         tick=0.01
         (( paused )) && tick=0.1
         read -rsn1 -t $tick key
         case $key in
+            $'\e') read -rsn6 -t 0.01 ;;
             q) break ;;
             p | ' ') paused=$(( 1 - paused )) ;;
             + | =) (( sp < 30 )) && (( sp++ )) ;;
@@ -154,7 +157,11 @@ play() {
             0) d=10 ;;
         esac
         now=${EPOCHREALTIME/[.,]/}
-        (( paused )) || ph=$(( ph + (now - prev > 200000 ? 200000 : now - prev) * sp * 4 / 10000 ))
+        now=${now:-$(( prev + 25000 ))}
+        dt=$(( now - prev ))
+        (( dt < 0 )) && dt=0
+        (( dt > 200000 )) && dt=200000
+        (( paused )) || ph=$(( ph + dt * sp * 4 / 10000 ))
         prev=$now
         hud=" ${d}D ${names[d]}  speed $sp  1-9,0 dimension  p pause  +/- speed  q menu"
         (( paused )) && hud+="  [paused]"
