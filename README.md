@@ -1,2 +1,16 @@
 # dimens
-Dimension bash script with 1-10 dimensions in white color.
+
+Spinning 1 dimension to 10 dimensions cubes in your terminal.
+
+## Install
+
+curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/YOURNAME/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens
+
+Needs bash 5+ and awk. Run it with dimens.
+
+## Controls
+
+- 1-9: switch dimensions, 0 is 10
+- p: pause
+- + / - : speed
+- q: return to the menu
