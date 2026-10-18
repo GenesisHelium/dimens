@@ -20,3 +20,7 @@ Needs bash 4+ and awk. Run it by typing `dimens` in your graphical accelerated t
 - p: pause
 - "+" / "-" : speed
 - q: return to the menu
+
+## Note
+
+I decided to share this cool thing I made after so long.
