@@ -2,6 +2,12 @@
 
 Spinning 1 dimension to 10 dimensions cubes in your terminal.
 
+# Demo
+
+
+https://github.com/user-attachments/assets/e5a24728-7279-4666-99a6-b0f1da67d01d
+
+
 ## Install
 
 ``curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/GenesisHelium/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens``
