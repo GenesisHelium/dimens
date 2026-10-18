@@ -18,5 +18,5 @@ Needs bash 4+ and awk. Run it by typing `dimens` in your graphical accelerated t
 
 - 1-9: switch dimensions, 0 is 10
 - p: pause
-- + / - : speed
+- "+" / "-" : speed
 - q: return to the menu
