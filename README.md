@@ -30,4 +30,4 @@ Run it by typing `dimens` in your graphical accelerated terminal. If you see box
 
 ## Credits
 
--- Eris (For supporting me making this.)
+-- Eris (For supporting me making this project.)
