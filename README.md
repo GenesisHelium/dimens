@@ -27,3 +27,7 @@ Run it by typing `dimens` in your graphical accelerated terminal. If you see box
 - p: pause
 - "+" / "-" : speed
 - q: return to the menu
+
+## Credits
+
+-- Eris (For supporting me making this.)
