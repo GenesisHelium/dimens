@@ -5,9 +5,9 @@ Spinning 1 dimension to 10 dimensions cubes in your terminal.
 </p>
 
 <p align="center">
-  <img width="854" alt="Dimens video demo." src="https://github.com/user-attachments/assets/e5a24728-7279-4666-99a6-b0f1da67d01d" />
-  <br>
-  <sub>Showcase</sub>
+<video src="https://github.com/user-attachments/assets/e5a24728-7279-4666-99a6-b0f1da67d01d" width="854" controls></video>
+<br>
+<sub>Showcase</sub>
 </p>
 
 ## Install
