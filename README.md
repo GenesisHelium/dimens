@@ -31,3 +31,4 @@ Run it by typing `dimens` in your graphical accelerated terminal. If you see box
 ## Credits
 
 -- Eris (For supporting me making this project.)
+-- https://github.com/0-ss (Inspired by his README macshell)
