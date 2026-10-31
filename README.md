@@ -8,10 +8,21 @@ https://github.com/user-attachments/assets/e5a24728-7279-4666-99a6-b0f1da67d01d
 
 ## Install
 
-```
-curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/GenesisHelium/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens
+```bash
+   curl -fsSL -o /tmp/dimens https://raw.githubusercontent.com/GenesisHelium/dimens/main/dimens.sh && sudo install -Dm755 /tmp/dimens /usr/local/bin/dimens && rm -f /tmp/dimens
+   ```
 
-```
+   Then run `dimens`.
+
+   **No sudo?** Install for just your user instead, and add the folder to your PATH:
+
+   ```bash
+   curl -fsSL --create-dirs -o ~/.local/bin/dimens https://raw.githubusercontent.com/GenesisHelium/dimens/main/dimens.sh && chmod +x ~/.local/bin/dimens
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+   ```
+
+   **Uninstall:** `sudo rm -f /usr/local/bin/dimens`
+   
 ### Required
 | What is required?|
 |---|
