@@ -14,7 +14,7 @@ curl -fsSL -o /tmp/dimens https://raw.githubusercontent.com/GenesisHelium/dimens
 
 Then run `dimens`.
 
-### No sudo?
+### No sudo/doas?
 
 Install for just your user:
 
@@ -51,10 +51,13 @@ Run it by typing `dimens` in your graphical accelerated terminal. If you see box
 
 ## Uninstall
 
-Installed with sudo:
+Installed with sudo/doas:
 
 ```bash
 sudo rm -f /usr/local/bin/dimens
+```
+```
+doas rm -f /usr/local/bin/dimens
 ```
 
 Installed for your user only:
