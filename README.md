@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/e5a24728-7279-4666-99a6-b0f1da67d01d
 curl -fsSL -o /tmp/dimens https://raw.githubusercontent.com/GenesisHelium/dimens/main/dimens.sh && sudo install -Dm755 /tmp/dimens /usr/local/bin/dimens && rm -f /tmp/dimens
 ```
 
-Then run `dimens`.
+Then run "dimens"
 
 ### No sudo/doas?
 
@@ -30,7 +30,7 @@ Then add `~/.local/bin` to your PATH. Check your shell with `echo $SHELL`, then 
 | zsh | `echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc` |
 | fish | `fish_add_path ~/.local/bin` |
 
-Run `dimens`.
+Run "dimens"
 
 ### Required
 
@@ -40,7 +40,7 @@ Run `dimens`.
 
 ### How to run it?
 
-Run it by typing `dimens` in your graphical accelerated terminal. If you see boxes instead of lines, then run `DIMENS_ASCII=1 dimens`.
+Run it by typing "dimens" in your graphical accelerated terminal. If you see boxes instead of lines, then run "DIMENS_ASCII=1 dimens"
 
 ## Controls
 
